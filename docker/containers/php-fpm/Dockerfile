@@ -1,5 +1,7 @@
 FROM php:8.2-fpm-bookworm
 
+COPY ./set_perm.sh /set_perm.sh
+
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 RUN \
@@ -32,8 +34,13 @@ RUN \
     \
     apt-get install libicu-dev --no-install-recommends -y && \
     docker-php-ext-configure intl && \
-    docker-php-ext-install intl &&\
+    docker-php-ext-install intl && \
     \
     docker-php-ext-install \
       pdo_mysql \
-      bcmath
+      bcmath && \
+    \
+    chown app:app /set_perm.sh && \
+    chmod u+x /set_perm.sh && \
+    \
+    apt-get install acl -y --no-install-recommends
