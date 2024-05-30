@@ -9,20 +9,35 @@ services:
     volumes:
       - ../back:/var/www/back
       - ./containers/php-fpm/logs/commandhistory:/commandhistory
-    user: "root:root"
+    user: root:root
     command: php-fpm
     working_dir: /var/www/back
     depends_on:
       - mysql
+    restart: unless-stopped
 
   mysql:
     image: mysql:8.0.34
     volumes:
       - ./containers/mysql/databases:/var/lib/mysql
     ports:
-      - "${MYSQL_FORWARD_PORT:-33061}:3306"
+      - ${MYSQL_FORWARD_PORT:-33061}:3306
     environment:
-      - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE:-AgileForge}
+      MYSQL_USER: ${DB_USERNAME:-AgileForge}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-AgileForge}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-AgileForge}
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: ./containers/nginx
+      args:
+        APP_HOST: ${APP_HOST:-agile-forge.lc}
+    volumes:
+      - ../back:/var/www/back
+    ports:
+      - ${PORT_NGINX:-80}:80
+    depends_on:
+      - php-fpm
+    restart: unless-stopped

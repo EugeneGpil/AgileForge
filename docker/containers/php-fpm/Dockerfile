@@ -37,3 +37,9 @@ RUN \
     docker-php-ext-install \
       pdo_mysql \
       bcmath
+
+COPY ./set_perm.sh /set_perm.sh
+
+RUN chown app:app /set_perm.sh && \
+    chmod u+x /set_perm.sh && \
+    apt-get install acl -y --no-install-recommends
