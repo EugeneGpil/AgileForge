@@ -10,7 +10,7 @@ services:
       - ../back:/var/www/back
       - ./containers/php-fpm/logs/commandhistory:/commandhistory
     user: root:root
-    command: php-fpm
+    command: bash -cl "php-fpm"
     working_dir: /var/www/back
     depends_on:
       - mysql

@@ -11,6 +11,9 @@ RUN \
     echo "Создать юзера app в группе app" && \
     useradd -u ${USER_ID} -m app -g app && \
     \
+    echo "umask 002" >> /home/app/.bashrc && \
+    echo "umask 002" >> /root/.bashrc && \
+    \
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php &&\
     php -r "unlink('composer-setup.php');" && \
