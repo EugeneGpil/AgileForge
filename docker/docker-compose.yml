@@ -6,6 +6,8 @@ services:
       args:
         USER_ID: ${USER_ID:-1000}
         GROUP_ID: ${GROUP_ID:-1000}
+        VERSION_NODE: ${VERSION_NODE:-20.14.0}
+        NPM_MIRROR: ${NPM_MIRROR:-https://registry.npmjs.org/}
     volumes:
       - ../back:/var/www/back
       - ./containers/php-fpm/logs/commandhistory:/commandhistory
