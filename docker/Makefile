@@ -11,9 +11,13 @@ stop:
 	docker compose stop
 
 perm:
-	docker compose run --user=root php-fpm bash -cl \
+	docker compose run php-fpm bash -cl \
 		"/set_perm.sh app"
 
-doc:
+docs-install:
+	docker compose run --user=app php-fpm bash -cl \
+		"npm install"
+
+docs:
 	docker compose run --user=app php-fpm bash -cl \
 		"php artisan apiato:apidoc"
