@@ -4,10 +4,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 COPY ./set_perm.sh /set_perm.sh
 
-ARG USER_ID=1000
-ARG GROUP_ID=1000
-RUN \
-    echo "Create group app" && \
+ARG USER_ID
+ARG GROUP_ID
+RUN echo "Create group app" && \
     groupadd -g ${GROUP_ID} app && \
     \
     echo "Create user app in group app" && \
@@ -17,6 +16,7 @@ RUN \
     echo "umask 002" >> /home/app/.bashrc && \
     \
     echo "Set up umask for root user (running php-fpm)" && \
+    echo "It works as set umask for www-data" && \
     echo "umask 002" >> /root/.bashrc && \
     \
     echo "Install composer" && \
@@ -60,16 +60,12 @@ RUN \
     chmod u+x /set_perm.sh && \
     \
     echo "Install acl. Without acl system will not follow advanced acl permissions config" && \
-    apt-get install acl -y --no-install-recommends && \
-    \
-    echo "adding nvm.sh to .bashrc to run nvm every login. It will set up nodejs version" && \
-    echo "source /home/app/.nvm/nvm.sh" >> ~/.bashrc
+    apt-get install acl -y --no-install-recommends
 
 USER app
-ARG VERSION_NODE=20.14.0
+ARG VERSION_NODE
 ARG NPM_MIRROR
-RUN \
-    echo "downloading and installing nvm" && \
+RUN echo "downloading and installing nvm" && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
     \
     echo "installing node, npm" && \
