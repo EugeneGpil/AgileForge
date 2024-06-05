@@ -60,10 +60,13 @@ RUN echo "Create group app" && \
     chmod u+x /set_perm.sh && \
     \
     echo "Install acl. Without acl system will not follow advanced acl permissions config" && \
-    apt-get install acl -y --no-install-recommends
+    apt-get install acl -y --no-install-recommends && \
+    \
+    echo "adding nvm.sh to .bashrc to run nvm every login. It will set up nodejs version" && \
+    echo "source /home/app/.nvm/nvm.sh" >> ~/.bashrc
 
 USER app
-ARG VERSION_NODE
+ARG VERSION_NODE=20.14.0
 ARG NPM_MIRROR
 RUN echo "downloading and installing nvm" && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
