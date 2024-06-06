@@ -9,12 +9,27 @@ services:
         NPM_MIRROR: ${NPM_MIRROR:-https://registry.npmjs.org/}
     volumes:
       - ../back:/var/www/back
-      - ./containers/dev/logs/commandhistory:/commandhistory
+      - ./containers/dev/logs/php-commandhistory:/commandhistory
     user: root:root
     command: bash -cl "php-fpm"
     working_dir: /var/www/back
     depends_on:
       - mysql
+    restart: unless-stopped
+
+  node:
+    build:
+      context: ./containers/dev
+      args:
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+        NPM_MIRROR: ${NPM_MIRROR:-https://registry.npmjs.org/}
+    volumes:
+      - ../front:/var/www/front
+      - ./containers/dev/logs/node-commandhistory:/commandhistory
+    user: app:app
+    command: tail -F anything
+    working_dir: /var/www/front
     restart: unless-stopped
 
   mysql:
@@ -41,4 +56,5 @@ services:
       - ${PORT_NGINX:-80}:80
     depends_on:
       - php-fpm
+      - node
     restart: unless-stopped
