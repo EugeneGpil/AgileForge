@@ -21,3 +21,6 @@ docs-install:
 docs:
 	docker compose run --user=app php-fpm bash -cl \
 		"php artisan apiato:apidoc"
+
+node-exec:
+	docker compose exec node bash
