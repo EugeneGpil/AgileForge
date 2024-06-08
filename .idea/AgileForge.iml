@@ -15,7 +15,6 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/barryvdh/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/carbonphp/carbon-doctrine-types" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/clue/ndjson-react" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/dflydev/dot-access-data" />
@@ -28,7 +27,6 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/dragonmantank/cron-expression" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/egulias/email-validator" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/evenement/evenement" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/felixfbecker/advanced-json-rpc" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/felixfbecker/language-server-protocol" />
@@ -75,7 +73,11 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/nunomaduro/termwind" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/orchestra/canvas" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/orchestra/canvas-core" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/orchestra/testbench" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/orchestra/testbench-core" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/orchestra/workbench" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/paragonie/constant_time_encoding" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/pdepend/pdepend" />
@@ -89,12 +91,14 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpoption/phpoption" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpstan/phpstan" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpunit/php-file-iterator" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpunit/php-invoker" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpunit/php-text-template" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/pimple/pimple" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/prettus/l5-repository" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/prettus/laravel-validation" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/psalm/plugin-laravel" />
@@ -113,13 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/ramsey/uuid" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/child-process" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/dns" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/event-loop" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/promise" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/socket" />
-      <excludeFolder url="file://$MODULE_DIR$/back/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/rector/rector" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/sebastian/cli-parser" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/sebastian/code-unit" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/sebastian/code-unit-reverse-lookup" />
@@ -144,6 +142,9 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/spatie/laravel-ignition" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/spatie/laravel-package-tools" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/spatie/laravel-permission" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/spatie/laravel-ray" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/spatie/macroable" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/spatie/ray" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/css-selector" />
@@ -160,6 +161,7 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/mime" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/polyfill-iconv" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/polyfill-intl-normalizer" />
@@ -180,6 +182,7 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/uid" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/vimeo/psalm" />
@@ -188,6 +191,9 @@
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/wikimedia/composer-merge-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/zbateson/mail-mime-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/zbateson/mb-wrapper" />
+      <excludeFolder url="file://$MODULE_DIR$/back/vendor/zbateson/stream-decorators" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
