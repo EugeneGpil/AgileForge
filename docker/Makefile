@@ -1,4 +1,4 @@
-init: build up perm init-backend-env composer-install key-generate passport-keys docs-install perm db-migrate
+init: build up perm init-backend-env composer-install key-generate passport-keys docs-install docs perm db-migrate
 
 build:
 	docker compose build
