@@ -25,7 +25,7 @@ composer-install:
 		"composer install"
 
 init-backend-env:
-	cp ../backend/.env.local ../backed/.env
+	cp ../backend/.env.docker ../backed/.env
 
 key-generate:
 	docker compose run --user=app php-fpm bash -cl \
