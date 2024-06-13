@@ -1,3 +1,4 @@
+# Apiato version 12.4.1
 <p align="center">
 <a href="https://github.com/apiato/apiato/actions/workflows/tests.yaml">
 <img src="https://img.shields.io/github/actions/workflow/status/apiato/apiato/tests.yaml?label=tests" alt="tests status">
