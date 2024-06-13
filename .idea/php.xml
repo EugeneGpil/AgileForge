@@ -210,6 +210,15 @@
       <path value="$PROJECT_DIR$/back/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/back/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/back/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/back/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/back/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/back/vendor/react/child-process" />
+      <path value="$PROJECT_DIR$/back/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/back/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/back/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/back/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/back/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/back/vendor/react/socket" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
