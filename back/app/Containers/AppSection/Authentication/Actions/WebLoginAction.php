@@ -32,14 +32,14 @@ class WebLoginAction extends ParentAction
                     static fn (Builder $query): Builder => $query->orWhere($loginField->name, $loginField->value);
             } else {
                 $credentials[$loginField->name] =
-                    static fn (Builder $query): Builder => $query->orWhereRaw("lower({$loginField->name}) = lower(?)", [$loginField->value]);
+                    static fn (Builder $query): Builder => $query->orWhereRaw("lower($loginField->name) = lower(?)", [$loginField->value]);
             }
         }
         $credentials['password'] = $sanitizedData['password'];
 
         $loggedIn = Auth::guard('web')->attempt($credentials, $sanitizedData['remember']);
 
-        // TODO: This doesnt feels right. Maybe we should move this to controller?
+        // TODO: This doesnt feel right. Maybe we should move this to controller?
         // You know, the controller should be the one who decides where to redirect the user.
         if ($loggedIn) {
             session()->regenerate();
