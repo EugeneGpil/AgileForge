@@ -23,8 +23,8 @@ class ShipTestCase extends ParentTestCase
 
     protected function tearDown(): void
     {
-        parent::tearDown();
-
         Schema::dropIfExists('test_users');
+
+        parent::tearDown();
     }
 }
