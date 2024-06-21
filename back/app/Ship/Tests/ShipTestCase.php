@@ -20,4 +20,11 @@ class ShipTestCase extends ParentTestCase
             $table->softDeletes();
         });
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        Schema::dropIfExists('test_users');
+    }
 }
