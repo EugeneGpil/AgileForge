@@ -46,7 +46,7 @@ final class ShipMigrationTest extends ShipTestCase
     {
         $table = 'notifications';
         $columns = [
-            'id' => 'guid',
+            'id' => 'string',
             'type' => 'string',
             'notifiable_id' => 'bigint',
             'notifiable_type' => 'string',
