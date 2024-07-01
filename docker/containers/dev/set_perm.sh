@@ -23,5 +23,6 @@ find /var/www/back -type d -exec chmod 755 {} \;
 set_shared_permissions "$1" "/var/www/back/bootstrap/cache"
 set_shared_permissions "$1" "/var/www/back/storage"
 
-printf "Add execution for /vendor/bin/ files\n"
-chmod u+x /var/www/back/vendor/bin/*
+printf "Add execution for bin files\n"
+chmod u+x /var/www/back/vendor/bin/* || true
+chmod u+x /var/www/back/node_modules/.bin/* || true
