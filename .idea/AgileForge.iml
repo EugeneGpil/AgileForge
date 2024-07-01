@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/back/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/back/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/back/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/back/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/back/vendor/apiato/container-installer" />

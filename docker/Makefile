@@ -45,3 +45,7 @@ db-migrate:
 
 node-exec:
 	docker compose exec node bash
+
+test:
+	docker compose exec --user=app php-fpm bash -cl \
+		"./vendor/bin/phpunit --stop-on-failure --stop-on-error --display-skipped ./app/"
