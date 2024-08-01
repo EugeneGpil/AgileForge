@@ -25,7 +25,7 @@ composer-install:
 		"composer install"
 
 init-back-env:
-	@if [ "$$(grep -s "^APP_KEY=" ../back/.env)" -eq 0 ]; then\
+	@if [ -e "$$(grep -s "^APP_KEY=" ../back/.env)" ]; then\
   		echo "APP_KEY=" > ../back/.env.temp;\
   	else\
 		grep "^APP_KEY=" ../back/.env > ../back/.env.temp;\
@@ -36,7 +36,7 @@ init-back-env:
 	rm ../back/.env.temp
 
 key-generate:
-	@if [ "$$(grep -s "^APP_KEY=" ../back/.env)" -eq 0 ]; then\
+	@if [ "$$(grep -s "^APP_KEY=" ../back/.env)" = "APP_KEY=" ]; then\
 		docker compose run --user=app php-fpm bash -cl \
 			"php artisan key:generate";\
 	else\
