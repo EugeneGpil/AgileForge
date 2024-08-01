@@ -14,7 +14,7 @@ services:
     command: bash -cl "php-fpm"
     working_dir: /var/www/back
     depends_on:
-      - mysql
+      - pgsql
     restart: unless-stopped
 
   node:
@@ -32,17 +32,17 @@ services:
     working_dir: /var/www/front
     restart: unless-stopped
 
-  mysql:
-    image: mysql:8.4
+  pgsql:
+    image: postgres:16.3-bookworm
     volumes:
-      - ./containers/mysql/databases:/var/lib/mysql
+      - ./containers/pgsql/databases:/var/lib/postgresql/data
     ports:
-      - ${MYSQL_FORWARD_PORT:-33061}:3306
+      - ${PSQL_FORWARD_PORT:-54321}:5432
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE:-AgileForge}
-      MYSQL_USER: ${DB_USERNAME:-AgileForge}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-AgileForge}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-AgileForge}
+      POSTGRES_DATABASE: ${DB_DATABASE:-AgileForge}
+      POSTGRES_USER: ${DB_USERNAME:-AgileForge}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-AgileForge}
+      PGDATA: /var/lib/postgresql/data/AgileForge
     restart: unless-stopped
 
   nginx:

@@ -1,16 +1,16 @@
-init: build up perm init-backend-env composer-install key-generate passport-keys docs-install docs perm db-migrate
+init: build up perm init-back-env composer-install key-generate passport-keys docs-install docs perm db-migrate
 
 build:
-	docker compose build
+	docker compose build php-fpm node pgsql nginx
 
 up:
-	docker compose up --detach --remove-orphans --force-recreate
+	docker compose up --detach --remove-orphans --force-recreate php-fpm node pgsql nginx
 
 exec:
 	docker compose exec --user=app php-fpm bash
 
-stop:
-	docker compose stop
+down:
+	docker compose down
 
 perm:
 	docker compose run php-fpm bash -cl \
@@ -24,16 +24,28 @@ composer-install:
 	docker compose run --user=app php-fpm bash -cl \
 		"composer install"
 
-init-backend-env:
-	cp ../backend/.env.docker ../backed/.env
+init-back-env:
+	@if [ $$(grep -c "^APP_KEY=" ../back/.env) -eq 0 ]; then\
+  		echo "APP_KEY=" > ../back/.env.temp;\
+  	else\
+		grep "^APP_KEY=" ../back/.env > ../back/.env.temp;\
+	fi
+	grep -v "^APP_KEY=" ../back/.env.docker > ../back/.env
+	echo "" >> ../back/.env
+	cat ../back/.env.temp >> ../back/.env
+	rm ../back/.env.temp
 
 key-generate:
-	docker compose run --user=app php-fpm bash -cl \
-		"php artisan key:generate"
+	@if [ $$(grep -c "^APP_KEY=" ../back/.env) -eq 0 ]; then\
+		docker compose run --user=app php-fpm bash -cl \
+			"php artisan key:generate";\
+	else\
+		echo "APP_KEY is already set. Skipped.";\
+	fi
 
 passport-keys:
 	docker compose run --user=app php-fpm bash -cl \
-		"php artisan passport:keys"
+		"php artisan passport:keys | true"
 
 docs:
 	docker compose run --user=app php-fpm bash -cl \
