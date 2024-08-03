@@ -45,8 +45,9 @@ final class ShipMigrationTest extends ShipTestCase
     public function testNotificationsTableHasExpectedColumns(): void
     {
         $table = 'notifications';
+
         $columns = [
-            'id' => 'string',
+            'id' => $this->getNotificationsIdType(),
             'type' => 'string',
             'notifiable_id' => 'bigint',
             'notifiable_type' => 'string',
@@ -57,5 +58,12 @@ final class ShipMigrationTest extends ShipTestCase
         ];
 
         $this->assertDatabaseTable($table, $columns);
+    }
+
+    private function getNotificationsIdType(): string
+    {
+        return config('database.default') === 'pgsql'
+            ? 'guid'
+            : 'string';
     }
 }

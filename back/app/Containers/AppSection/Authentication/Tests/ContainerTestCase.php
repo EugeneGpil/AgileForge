@@ -20,7 +20,7 @@ class ContainerTestCase extends ParentTestCase
 
     protected function createPasswordGrantClient(): void
     {
-        DB::table('oauth_clients')->insert([
+        DB::table('oauth_clients')->insertOrIgnore([
             'id' => self::CLIENT_ID,
             'secret' => self::CLIENT_SECRET,
             'name' => 'Testing',
