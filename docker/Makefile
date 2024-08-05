@@ -1,10 +1,10 @@
-init: build up perm init-back-env composer-install key-generate passport-keys docs-install docs perm db-migrate
+init: build up perm init-back-env composer-install key-generate passport-keys docs-install docs perm db-migrate test
 
 build:
-	docker compose build php-fpm node pgsql nginx
+	docker compose build
 
 up:
-	docker compose up --detach --remove-orphans --force-recreate php-fpm node pgsql nginx
+	docker compose up --detach --remove-orphans --force-recreate
 
 exec:
 	docker compose exec --user=app php-fpm bash

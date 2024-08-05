@@ -17,13 +17,20 @@ final class ShipMigrationTest extends ShipTestCase
             'id' => 'bigint',
             'queue' => 'string',
             'payload' => 'text',
-            'attempts' => 'smallint',
+            'attempts' => $this->getJobsAttemptsType(),
             'reserved_at' => 'integer',
             'available_at' => 'integer',
             'created_at' => 'integer',
         ];
 
         $this->assertDatabaseTable($table, $columns);
+    }
+
+    private function getJobsAttemptsType(): string
+    {
+        return config('database.default') === 'mysql'
+            ? 'boolean'
+            : 'smallint';
     }
 
     public function testFailedJobsTableHasExpectedColumns(): void
