@@ -28,6 +28,8 @@ services:
     volumes:
       - ../front:/var/www/front
       - ./containers/dev/logs/node-commandhistory:/commandhistory
+    ports:
+      - ${NODE_PORT:-3000}:3000
     user: app:app
     command: tail -F anything
     working_dir: /var/www/front
