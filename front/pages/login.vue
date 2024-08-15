@@ -14,7 +14,15 @@
               <input class="form-control" type="email" placeholder="Email">
               <div class="input-group-append">
                 <div class="input-group-text">
-                  <span class="fas fa-envelope" />
+                  <FontAwesome icon="envelope" />
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input class="form-control" type="password" placeholder="Password">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <FontAwesome icon="lock" />
                 </div>
               </div>
             </div>
