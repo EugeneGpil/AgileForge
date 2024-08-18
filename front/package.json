@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "lint": "eslint ./pages ./eslint.config.js --fix",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -13,6 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@nuxt/eslint": "^0.5.0",
     "@vesp/nuxt-fontawesome": "^1.0.4",
     "admin-lte-css-only": "^3.2.0",
     "autoprefixer": "10.4.5",
@@ -20,5 +22,11 @@
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^15.9.0"
   }
 }
