@@ -3,9 +3,7 @@
     <div class='login-box'>
       <div class='card card-outline card-primary'>
         <div class='card-header text-center'>
-          <a class='h1' href='#'>
-            Agile<b>Forge</b>
-          </a>
+          <Logo />
         </div>
         <div class='card-body'>
           <p class='login-box-msg'>Sign in to start your session</p>
@@ -35,11 +33,15 @@
 
 <script>
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
+import Logo from '~/src/shared/ui/Logo.vue'
 
 export default {
   computed: {
     faEnvelope: () => faEnvelope,
     faLock: () => faLock,
+  },
+  components: {
+    Logo,
   },
 }
 </script>
