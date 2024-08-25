@@ -34,7 +34,11 @@
 </template>
 
 <script>
+<<<<<<< Updated upstream
 import {faEnvelope, faLock} from "@fortawesome/free-solid-svg-icons";
+=======
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
+>>>>>>> Stashed changes
 
 export default {
   computed: {
