@@ -34,9 +34,7 @@
 </template>
 
 <script>
-import {
-  faEnvelope, faLock,
-} from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   computed: {

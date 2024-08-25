@@ -1,6 +1,7 @@
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
+import enforce from 'eslint-plugin-import-newlines'
 
 export default [
   {
@@ -19,6 +20,9 @@ export default [
   pluginJs.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   {
+    plugins: {
+      enforce,
+    },
     rules: {
       'array-bracket-newline': [
         'error',
@@ -36,9 +40,19 @@ export default [
         'error',
         'always',
       ],
+      'enforce/enforce': [
+        'error',
+        {
+          items: 40,
+          'max-len': 120, 
+        },
+      ],
       'object-curly-newline': [
         'error',
-        'always',
+        {
+          ObjectExpression: 'always',
+          ImportDeclaration: 'never',
+        },
       ],
       'object-property-newline': [
         'error',
