@@ -68,6 +68,10 @@ export default [
         'error',
         'single',
       ],
+      'vue/mustache-interpolation-spacing': [
+        'error',
+        'always',
+      ],
       indent: [
         'error',
         2,

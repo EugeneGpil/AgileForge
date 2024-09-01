@@ -6,7 +6,8 @@
           <Logo />
         </div>
         <div class='card-body'>
-          <p class='login-box-msg'>Sign in to start your session</p>
+          <!--suppress JSUnresolvedReference -->
+          <p class='login-box-msg'>{{ $t('login.Sign_in_to_start_your_session') }}</p>
           <form>
             <div class='input-group mb-3'>
               <input class='form-control' type='email' placeholder='Email'>
