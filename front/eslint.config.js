@@ -2,11 +2,12 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 import enforce from 'eslint-plugin-import-newlines'
+import pluginImport from 'eslint-plugin-import'
 
 export default [
   {
     files: [
-      '**/*.{cjs,js,mjs,vue}',
+      '**/*.{cjs,js,mjs,vue,ts}',
     ],
   },
   {
@@ -22,6 +23,7 @@ export default [
   {
     plugins: {
       enforce,
+      import: pluginImport,
     },
     rules: {
       'array-bracket-newline': [
@@ -46,6 +48,10 @@ export default [
           items: 40,
           'max-len': 120, 
         },
+      ],
+      'import/extensions': [
+        'error',
+        'never',
       ],
       'object-curly-newline': [
         'error',
@@ -92,6 +98,15 @@ export default [
     ],
     rules: {
       'vue/multi-word-component-names': 'off',
+    },
+  },
+  {
+    files: [
+      'i18n.config.ts',
+      'nuxt.config.ts',
+    ],
+    rules: {
+      'no-undef': 'off',
     },
   },
 ]

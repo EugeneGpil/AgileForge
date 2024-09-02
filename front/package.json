@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "eslint ./pages ./eslint.config.js --fix",
+    "lint": "eslint ./i18n ./pages ./src ./eslint.config.js ./i18n.config.ts ./nuxt.config.ts --fix",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-import-newlines": "^1.4.0",
     "eslint-plugin-vue": "^9.27.0",
     "globals": "^15.9.0"

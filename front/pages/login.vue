@@ -3,7 +3,7 @@
     <div class='login-box'>
       <div class='card card-outline card-primary'>
         <div class='card-header text-center'>
-          <Logo />
+          <LogoComponent />
         </div>
         <div class='card-body'>
           <!--suppress JSUnresolvedReference -->
@@ -34,7 +34,7 @@
 
 <script>
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
-import Logo from '~/src/shared/ui/Logo.vue'
+import LogoComponent from '~/src/shared/ui/LogoComponent'
 
 export default {
   computed: {
@@ -42,7 +42,7 @@ export default {
     faLock: () => faLock,
   },
   components: {
-    Logo,
+    LogoComponent,
   },
 }
 </script>
