@@ -1,5 +1,18 @@
 <template>
-  <div class='login-page'>
+  <div class='login__navbar sidebar-mini sidebar-closed sidebar-collapse'>
+    <div class="wrapper">
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <span class="nav-link">
+              <i class="flag-icon"/>
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="login-page">
     <div class='login-box'>
       <div class='card card-outline card-primary'>
         <div class='card-header text-center'>
@@ -46,3 +59,19 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+.login__navbar {
+  height: 0;
+}
+.flag-icon {
+  cursor: pointer;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 1.33333333em;
+  background-image: url('/img/flags/us.svg');
+}
+</style>
