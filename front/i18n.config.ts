@@ -1,5 +1,5 @@
-import en from './i18n/en'
-import ru from './i18n/ru'
+import en from './i18n/en.js'
+import ru from './i18n/ru.js'
 
 // noinspection JSUnusedGlobalSymbols
 export default defineI18nConfig(() => ({

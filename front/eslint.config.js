@@ -51,7 +51,7 @@ export default [
       ],
       'import/extensions': [
         'error',
-        'never',
+        'always',
       ],
       'object-curly-newline': [
         'error',
@@ -70,11 +70,23 @@ export default [
           'registeredComponentsOnly': false,
         },
       ],
+      'vue/html-closing-bracket-spacing': [
+        'error',
+        {
+          startTag: 'never',
+          endTag: 'never',
+          selfClosingTag: 'always',
+        },
+      ],
       'vue/html-quotes': [
         'error',
         'single',
       ],
       'vue/mustache-interpolation-spacing': [
+        'error',
+        'always',
+      ],
+      'vue/padding-line-between-blocks': [
         'error',
         'always',
       ],
