@@ -9,8 +9,14 @@
           <!--suppress JSUnresolvedReference -->
           <p class='text-center mb-3'>{{ $t('lang.Select_Language') }}</p>
           <div class='text-center mt-2 mb-3'>
-            <span class='btn btn-block btn-secondary'>English</span>
-            <span class='btn btn-block btn-secondary'>Русский</span>
+            <span class='lang__button btn btn-block btn-secondary'>
+              <i class='lang__flag lang__flag-usa mr-1' />
+              English
+            </span>
+            <span class='lang__button btn btn-block btn-secondary'>
+              <i class='lang__flag lang__flag-ru mr-1' />
+              Русский
+            </span>
           </div>
         </div>
       </div>
@@ -21,3 +27,27 @@
 <script setup lang="ts">
 import LogoComponent from '~/src/shared/ui/LogoComponent.vue'
 </script>
+
+<style scoped lang="scss">
+.lang {
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__flag {
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  &__flag-usa {
+    background-image: url('/img/flags/us.svg');
+  }
+  &__flag-ru {
+    background-image: url('/img/flags/ru.svg');
+  }
+}
+</style>
