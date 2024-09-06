@@ -9,11 +9,17 @@
           <!--suppress JSUnresolvedReference -->
           <p class='text-center mb-3'>{{ $t('lang.Select_Language') }}</p>
           <div class='text-center mt-2 mb-3'>
-            <span class='lang__button btn btn-block btn-secondary'>
+            <!--suppress JSCheckFunctionSignatures -->
+            <span
+                class='lang__button btn btn-block btn-secondary'
+                @click='setLocale("en")'>
               <i class='lang__flag lang__flag-usa mr-1' />
               English
             </span>
-            <span class='lang__button btn btn-block btn-secondary'>
+            <!--suppress JSCheckFunctionSignatures -->
+            <span
+                class='lang__button btn btn-block btn-secondary'
+                @click='setLocale("ru")'>
               <i class='lang__flag lang__flag-ru mr-1' />
               Русский
             </span>
@@ -24,8 +30,21 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import LogoComponent from '~/src/shared/ui/LogoComponent.vue'
+
+export default {
+  setup() {
+    const {setLocale} = useI18n()
+
+    return {
+      setLocale,
+    }
+  },
+  components: {
+    LogoComponent,
+  },
+}
 </script>
 
 <style scoped lang="scss">

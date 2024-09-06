@@ -12,8 +12,14 @@ export default defineNuxtConfig({
     '@vesp/nuxt-fontawesome',
     '@nuxt/eslint',
     '@nuxtjs/i18n',
+    '@pinia/nuxt',
   ],
   i18n: {
     vueI18n: './i18n.config.ts',
+  },
+  imports: {
+    dirs: [
+      './stores',
+    ],
   },
 })
