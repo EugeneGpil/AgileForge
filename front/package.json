@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "eslint ./i18n ./pages ./src ./stores ./eslint.config.js ./i18n.config.ts ./nuxt.config.ts --fix",
+    "lint": "eslint ./i18n ./pages ./plugins ./src ./stores ./eslint.config.js ./i18n.config.ts ./nuxt.config.ts --fix",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
